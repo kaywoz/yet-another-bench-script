@@ -538,9 +538,9 @@ function iperf_test {
 	# attempt the iperf send test 5 times, allowing for a slot to become available on the
 	#   server or to throw out any bad/error results
 	I=1
-	while [ $I -le 5 ]
+	while [ $I -le 1 ]
 	do
-		echo -en "Performing $MODE iperf3 send test to $HOST (Attempt #$I of 5)..."
+		echo -en "Performing $MODE iperf3 send test to $HOST (Attempt #$I of 1)..."
 		# select a random iperf port from the range provided
 		PORT=`shuf -i $PORTS -n 1`
 		# run the iperf test sending data from the host to the iperf server; includes
@@ -566,9 +566,9 @@ function iperf_test {
 	# attempt the iperf receive test 5 times, allowing for a slot to become available on
 	#   the server or to throw out any bad/error results
 	J=1
-	while [ $J -le 5 ]
+	while [ $J -le 1 ]
 	do
-		echo -n "Performing $MODE iperf3 recv test from $HOST (Attempt #$J of 5)..."
+		echo -n "Performing $MODE iperf3 recv test from $HOST (Attempt #$J of 1)..."
 		# select a random iperf port from the range provided
 		PORT=`shuf -i $PORTS -n 1`
 		# run the iperf test receiving data from the iperf server to the host; includes
@@ -667,11 +667,11 @@ if [ -z "$SKIP_IPERF" ]; then
 		"ping6.online.net" "5200-5209" "Online.net" "Paris, FR (10G)" "IPv6" \
 		"iperf.worldstream.nl" "5201-5201" "WorldStream" "The Netherlands (10G)" "IPv4|IPv6" \
 		#"iperf.biznetnetworks.com" "5201-5203" "Biznet" "Jakarta, Indonesia (1G)" "IPv4" \
-		"iperf.sgp.webhorizon.in" "9201-9205" "WebHorizon" "Singapore (400M)" "IPv4|IPv6" \
-		"nyc.speedtest.clouvider.net" "5200-5209" "Clouvider" "NYC, NY, US (10G)" "IPv4|IPv6" \
-		"iperf3.velocityonline.net" "5201-5210" "Velocity Online" "Tallahassee, FL, US (10G)" "IPv4" \
-		"la.speedtest.clouvider.net" "5200-5209" "Clouvider" "Los Angeles, CA, US (10G)" "IPv4|IPv6" \
-		"speedtest.iveloz.net.br" "5201-5209" "Iveloz Telecom" "Sao Paulo, BR (2G)" "IPv4" \
+		#"iperf.sgp.webhorizon.in" "9201-9205" "WebHorizon" "Singapore (400M)" "IPv4|IPv6" \
+		#"nyc.speedtest.clouvider.net" "5200-5209" "Clouvider" "NYC, NY, US (10G)" "IPv4|IPv6" \
+		#"iperf3.velocityonline.net" "5201-5210" "Velocity Online" "Tallahassee, FL, US (10G)" "IPv4" \
+		#"la.speedtest.clouvider.net" "5200-5209" "Clouvider" "Los Angeles, CA, US (10G)" "IPv4|IPv6" \
+		#"speedtest.iveloz.net.br" "5201-5209" "Iveloz Telecom" "Sao Paulo, BR (2G)" "IPv4" \
 	)
 
 	# if the "REDUCE_NET" flag is activated, then do a shorter iperf test with only three locations
